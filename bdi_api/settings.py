@@ -18,10 +18,6 @@ class Settings(BaseSettings):
         default=join(PROJECT_DIR, "data"),
         description="For any other value set env variable 'BDI_LOCAL_DIR'",
     )
-    s3_bucket_test: str = Field(
-        default="bdi-test-gerson",
-        description="Bucket for testing",
-    )
     s3_bucket: str = Field(
         default="bdi-aircraft-gerson",
         description="Call the api like `BDI_S3_BUCKET=yourbucket uvicorn ...`",
@@ -55,8 +51,7 @@ class Settings(BaseSettings):
         description = "Assigned name for the file."
     )
 
-
-    model_config = SettingsConfigDict(env_prefix="bdi_")
+    model_config = SettingsConfigDict(env_prefix="BDI_")
 
     @property
     def raw_dir(self) -> str:

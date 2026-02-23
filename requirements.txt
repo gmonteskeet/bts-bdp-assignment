@@ -6,6 +6,8 @@ pydantic-settings>=2,<3
 boto3>=1.33,<2
 urllib3<2
 duckdb>=1,<2
+psycopg2-binary>=2.9,<3
+sqlalchemy>=2,<3
 httpx>=0.25,<1
 polars==1.38.1
 pytest>=7,<8

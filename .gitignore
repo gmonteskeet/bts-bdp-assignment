@@ -17,7 +17,7 @@ log.txt
 env3.*
 env
 venv
-.venv
+.venv*
 .ruff_cache
 
 # vim temporary files
