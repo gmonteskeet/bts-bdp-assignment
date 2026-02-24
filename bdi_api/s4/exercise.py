@@ -87,11 +87,11 @@ def download_data(
         objects_to_delete = [{"Key": obj["Key"]} for obj in response["Contents"]]
         s3.delete_objects(Bucket=s3_bucket, Delete={"Objects": objects_to_delete})
     
-    # Get available files from index
+    # We know EXACTLY which files exist from the index
     available_files = get_available_files(s3, s3_bucket)
     files_to_download = available_files[:file_limit]
     
-    # Prepare arguments for parallel download
+    # Only download those specific files - no extras
     args_list = [
         (filename, base_url, s3_bucket, s3_prefix)
         for filename in files_to_download
