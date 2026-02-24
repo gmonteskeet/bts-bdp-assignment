@@ -55,6 +55,11 @@ class Settings(BaseSettings):
         description="MongoDB connection URL. Set BDI_MONGO_URL for remote, e.g. mongodb+srv://user:pass@cluster.mongodb.net",
     )
 
+    db_url: str = Field(
+        default="sqlite:///hr_database.db",
+        description="Database connection URL. Set via BDI_DB_URL env variable.",
+    )
+
     model_config = SettingsConfigDict(env_prefix="BDI_")
 
     @property
