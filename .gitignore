@@ -35,3 +35,4 @@ venv
 .pytest.json
 
 *.db
+*.pem
