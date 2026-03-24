@@ -17,7 +17,7 @@ log.txt
 env3.*
 env
 venv
-.venv
+.venv*
 .ruff_cache
 
 # vim temporary files
@@ -35,3 +35,5 @@ venv
 .pytest.json
 
 CLAUDE.md
+*.db
+*.pem
