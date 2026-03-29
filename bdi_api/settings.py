@@ -51,7 +51,7 @@ class Settings(BaseSettings):
         description = "Assigned name for the file."
     )
     mongo_url: str = Field(
-        default="mongodb://localhost:27017",
+        default="mongodb://admin:admin123@localhost:27017",
         description="MongoDB connection URL. Set BDI_MONGO_URL for remote, e.g. mongodb+srv://user:pass@cluster.mongodb.net",
     )
     neo4j_url: str = Field(
