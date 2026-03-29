@@ -1,4 +1,4 @@
-.PHONY: run test build_docker run_docker stop_docker mongo mongo_stop
+.PHONY: run test build_docker run_docker stop_docker mongo mongo_stop neo4j neo4j_stop
 
 .DEFAULT_GOAL:=help
 
@@ -24,3 +24,9 @@ mongo:
 
 mongo_stop:
 	docker compose -f docker/docker-compose.yml down
+
+neo4j:
+	docker compose -f docker/docker-compose.yml up -d neo4j
+
+neo4j_stop:
+	docker compose -f docker/docker-compose.yml stop neo4j
