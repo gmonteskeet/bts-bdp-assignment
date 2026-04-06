@@ -21,6 +21,19 @@ services:
     volumes:
       - neo4j_data:/data
 
+  postgres:
+    image: postgres:16
+    container_name: bdi-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: bdi
+      POSTGRES_PASSWORD: bdi123
+      POSTGRES_DB: bdi_aircraft
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
 volumes:
   mongodb_data:
   neo4j_data:
+  postgres_data:

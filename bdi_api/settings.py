@@ -68,7 +68,7 @@ class Settings(BaseSettings):
     )
 
     db_url: str = Field(
-        default="sqlite:///hr_database.db",
+        default="postgresql://bdi:bdi123@localhost:5432/bdi_aircraft",
         description="Database connection URL. Set via BDI_DB_URL env variable.",
     )
 
